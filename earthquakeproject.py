@@ -21,7 +21,7 @@ def printToDisplay(line1,line2,line3):
     draw = ImageDraw.Draw(HBlackImage)   
     font = ImageFont.truetype('./library/KronaOne-Regular.ttf', 15)
     draw.text((25, 55), line1, font = font, fill = 0)
-    draw.text((25, 75), line2, font = font, fill = 0)
+    draw.text((25, 75), str(line2), font = font, fill = 0)
     draw.text((25, 95), line3, font = font, fill = 0)
     epd.display(epd.getbuffer(HBlackImage))
 
