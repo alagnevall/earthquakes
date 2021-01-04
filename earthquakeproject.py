@@ -11,9 +11,9 @@ from PIL import Image, ImageDraw, ImageFont
 ##start code to display on pi screen
 
 epd = epd2in13.EPD() # get the display
-epd.init(self) 
-# print("Clear screen") #debugging use
-# epd.Clear(0xFF) #clear screen back to white
+epd.init(epd.FULL_UPDATE) 
+print("Clear screen") #debugging use
+epd.Clear(0xFF) #clear screen back to white
 
 def printToDisplay(string):
 
@@ -21,7 +21,7 @@ def printToDisplay(string):
     draw = ImageDraw.Draw(HBlackImage)   
     font = ImageFont.truetype('/library/KronaOne-Regular.ttf', 30)
     draw.text((25, 65), string, font = font, fill = 0)
-    epd.display(self,epd.getbuffer(HBlackImage))
+    epd.display(epd.getbuffer(HBlackImage))
 
 
 #Call USGS website with lat/long of Lagnevall house
