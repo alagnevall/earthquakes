@@ -26,7 +26,7 @@ try:
     draw.pieslice((55, 60, 95, 100), 270, 360, fill = 0)
     draw.polygon([(110,0),(110,50),(150,25)],outline = 0)
     draw.polygon([(190,0),(190,50),(150,25)],fill = 0)
-    font15 = ImageFont.truetype('/usr/share/fonts/truetype/wqy/wqy-microhei.ttc', 15)
+    font15 = ImageFont.truetype('./KronaOne-Regular.ttf', 15)
     draw.text((110, 60), 'e-Paper demo', font = font15, fill = 0)
     draw.text((110, 80), 'Hello world', font = font15, fill = 0)
     epd.display(epd.getbuffer(image))
@@ -52,7 +52,7 @@ try:
     print("Show time")
     epd.init(epd.PART_UPDATE)    
     epd.Clear(0xFF)
-    font24 = ImageFont.truetype('/usr/share/fonts/truetype/wqy/wqy-microhei.ttc', 24)
+    font24 = ImageFont.truetype('./KronaOne-Regular.ttf', 24)
     time_image = Image.new('1', (epd2in13.EPD_HEIGHT, epd2in13.EPD_WIDTH), 255)
     time_draw = ImageDraw.Draw(time_image)
     while (True):

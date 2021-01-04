@@ -19,7 +19,7 @@ def printToDisplay(string):
 
     HBlackImage = Image.new('1', (epd2in13.EPD_HEIGHT, epd2in13.EPD_WIDTH), 255)
     draw = ImageDraw.Draw(HBlackImage)   
-    font = ImageFont.truetype('/library/KronaOne-Regular.ttf', 30)
+    font = ImageFont.truetype('./library/KronaOne-Regular.ttf', 30)
     draw.text((25, 65), string, font = font, fill = 0)
     epd.display(epd.getbuffer(HBlackImage))
 
