@@ -19,10 +19,10 @@ def printToDisplay(line1,line2,line3):
 
     HBlackImage = Image.new('1', (epd2in13.EPD_HEIGHT, epd2in13.EPD_WIDTH), 255)
     draw = ImageDraw.Draw(HBlackImage)   
-    font = ImageFont.truetype('./library/KronaOne-Regular.ttf', 30)
-    draw.text((25, 65), line1, font = font, fill = 0)
-    draw.text((25, 65), line2, font = font, fill = 0)
-    draw.text((25, 65), line3, font = font, fill = 0)
+    font = ImageFont.truetype('./library/KronaOne-Regular.ttf', 15)
+    draw.text((25, 55), line1, font = font, fill = 0)
+    draw.text((25, 75), line2, font = font, fill = 0)
+    draw.text((25, 95), line3, font = font, fill = 0)
     epd.display(epd.getbuffer(HBlackImage))
 
 
