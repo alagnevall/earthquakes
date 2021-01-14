@@ -82,7 +82,7 @@ clock = datetime.datetime.now() - quaketime
 
 #store as variables instead of print statements to prep for raspberry pi
 earthquake = f"Last Earthquake:"
-dayssince = f"{(clock).days} Days
+dayssince = f"{(clock).days} Days"
 info = f'{response["features"][0]["properties"]["title"]}'
 quakedate = f'on {(quaketime).strftime("%Y-%m-%d %H:%M")}'
 
