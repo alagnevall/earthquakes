@@ -32,6 +32,7 @@ def printToDisplay(line1,line2,line3,line4):
     draw = ImageDraw.Draw(image)   
     # font = ImageFont.truetype('./library/KronaOne-Regular.ttf', 8)
     font = ImageFont.truetype('./library/04B_08.TTF', 8)
+    font2 = ImageFont.truetype('./library/04B_08.TTF', 6)
     # Draw some shapes.
     # Draw a black filled box to clear the image.
     draw.rectangle((0,0,disp.width,disp.height), outline=0, fill=0)
@@ -46,8 +47,8 @@ def printToDisplay(line1,line2,line3,line4):
     
     draw.text((x, top), line1, font = font, fill = 255)
     draw.text((x, top+8), str(line2), font = font, fill = 255)
-    draw.text((x, top+16), line3, font = font, fill = 255)
-    draw.text((x, top+24), line4, font = font, fill = 255)
+    draw.text((x, top+16), line3, font = font2, fill = 255)
+    draw.text((x, top+24), line4, font = font2, fill = 255)
   # Display image.
     disp.image(image)
     disp.display()
@@ -80,10 +81,10 @@ clock = datetime.datetime.now() - quaketime
 
 
 #store as variables instead of print statements to prep for raspberry pi
-earthquake = f"Days since last Earthquake"
-dayssince = (clock).days
+earthquake = f"Last Earthquake:"
+dayssince = f"{(clock).days} Days
 info = f'{response["features"][0]["properties"]["title"]}'
-quakedate = f'on {(quaketime).strftime("%Y-%m-%d %H:%M:%S")}'
+quakedate = f'on {(quaketime).strftime("%Y-%m-%d %H:%M")}'
 
 print(earthquake, dayssince)
 print(info,quakedate)
