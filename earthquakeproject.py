@@ -31,7 +31,7 @@ def printToDisplay(line1,line2,line3,line4):
     image = Image.new('1', (disp.width, disp.height))
     draw = ImageDraw.Draw(image)   
     # font = ImageFont.truetype('./library/KronaOne-Regular.ttf', 8)
-    font = ImageFont.truetype('./library/04B_08.ttf', 8)
+    font = ImageFont.truetype('./library/04B_08.TTF', 8)
     # Draw some shapes.
     # Draw a black filled box to clear the image.
     draw.rectangle((0,0,disp.width,disp.height), outline=0, fill=0)
