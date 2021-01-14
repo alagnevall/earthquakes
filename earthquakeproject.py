@@ -35,7 +35,7 @@ def printToDisplay(line1,line2,line3):
     # First define some constants to allow easy resizing of shapes.
     padding = 0
     top = padding
-    bottom = height-padding
+    bottom = disp.height-padding
     # Move left to right keeping track of the current x position for drawing shapes.
     x = 0
 
