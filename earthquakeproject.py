@@ -28,8 +28,8 @@ disp.display()
 
 def printToDisplay(line1,line2,line3):
 
-    HBlackImage = Image.new('1', (disp.height, disp.width))
-    draw = ImageDraw.Draw(HBlackImage)   
+    image = Image.new('1', (disp.height, disp.width))
+    draw = ImageDraw.Draw(image)   
     font = ImageFont.truetype('./library/KronaOne-Regular.ttf', 8)
     # Draw some shapes.
     # First define some constants to allow easy resizing of shapes.
