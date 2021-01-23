@@ -26,7 +26,7 @@ disp.begin()
 disp.clear()
 disp.display()
 
-def printToDisplay(line1,line2,line3,line4):
+def printToDisplay(line1,line2,line3,line4,line5):
 
     image = Image.new('1', (disp.width, disp.height))
     draw = ImageDraw.Draw(image)   
@@ -49,6 +49,7 @@ def printToDisplay(line1,line2,line3,line4):
     draw.text((x, top+8), line2, font = font, fill = 255)
     draw.text((x, top+16), line3, font = font, fill = 255)
     draw.text((x, top+24), line4, font = font, fill = 255)
+    draw.text((x+75, top+8), line5, font = font, fill = 255)
   # Display image.
     disp.image(image)
     disp.display()
@@ -79,17 +80,18 @@ quaketime = datetime.datetime.fromtimestamp(timestamp//1000.0)
 
 clock = datetime.datetime.now() - quaketime
 
-
 #store as variables instead of print statements to prep for raspberry pi
 earthquake = f"Last Earthquake: {(clock).days} Days "
 # dayssince = f"{(clock).days} Days"
 info = f'{response["features"][0]["properties"]["title"]}'.split(' of ')
 quakedate = f'on {(quaketime).strftime("%Y-%m-%d %H:%M")}'
+hours = (f'{round((clock).seconds/3600,0)} Hours')
 
 print(earthquake)
 print(info[0])
 print(info[1])
 print(quakedate)
-print(round((clock).seconds/3600),0)
-printToDisplay(earthquake,info[0],info[1], quakedate)
+print(hours)
+
+printToDisplay(earthquake,info[0],info[1], quakedate, hours)
 
