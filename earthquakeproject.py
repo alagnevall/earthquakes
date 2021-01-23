@@ -49,7 +49,7 @@ def printToDisplay(line1,line2,line3,line4,line5):
     draw.text((x, top+8), line2, font = font, fill = 255)
     draw.text((x, top+16), line3, font = font, fill = 255)
     draw.text((x, top+24), line4, font = font, fill = 255)
-    draw.text((x+75, top+8), line5, font = font, fill = 255)
+    draw.text((x+87, top+8), line5, font = font, fill = 255)
   # Display image.
     disp.image(image)
     disp.display()
