@@ -90,5 +90,6 @@ print(earthquake)
 print(info[0])
 print(info[1])
 print(quakedate)
+print((clock).hours)
 printToDisplay(earthquake,info[0],info[1], quakedate)
 
