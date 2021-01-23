@@ -90,6 +90,6 @@ print(earthquake)
 print(info[0])
 print(info[1])
 print(quakedate)
-print((clock).seconds/3600)
+print(round((clock).seconds/3600),0)
 printToDisplay(earthquake,info[0],info[1], quakedate)
 
