@@ -85,7 +85,7 @@ earthquake = f"Last Earthquake: {(clock).days} Days "
 # dayssince = f"{(clock).days} Days"
 info = f'{response["features"][0]["properties"]["title"]}'.split(' of ')
 quakedate = f'on {(quaketime).strftime("%Y-%m-%d %H:%M")}'
-hours = (f'{round((clock).seconds/3600,0)} Hours')
+hours = (f'{int(round((clock).seconds/3600,0))} Hours')
 
 print(earthquake)
 print(info[0])
