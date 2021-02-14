@@ -95,11 +95,11 @@ try:
 
   printToDisplay(earthquake,info[0],info[1], quakedate, hours)
 except:
-  none = "No Earthquakes in 30 days"
-  days = "in 30 Days"
+  none = "No Quakes in 30 days"
   later = "Keep on Shaking"
   possible = "created by:"
   creator = "April and Hans"
+  empty = ""
   print(none)
-  printToDisplay(none,days,later,possible,creator)
+  printToDisplay(none,later,possible,creator, empty)
 
