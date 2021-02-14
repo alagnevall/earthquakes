@@ -56,18 +56,20 @@ def printToDisplay(line1,line2,line3,line4,line5):
 
 #Call USGS website with lat/long of Meadowlark Elementary
 
-baseURL = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&"
+baseURL = "https://earthquake.usgs.gov/fdsnws/event/1/query.geojson?"
 
 #paramaters
 
-lat = "37.69"
-lng = "-97.16"
+lat = "36.99"
+lat2 = "40.00"
+lng = "-102.05"
+lng2 = "-94.61"
 # this is in km
 radius = "60"
 limit =  "1"
 orderby = "time"
 
-query = f"latitude={lat}&longitude={lng}&maxradiuskm={radius}&limit={limit}&orderby={orderby}"
+query = f"maxlatitude={lat2}&minlatitude={lat}&maxlongitude={lng2}&minlongitude={lng}&limit={limit}&orderby={orderby}"
 
 
 try:
