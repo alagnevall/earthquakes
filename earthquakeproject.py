@@ -70,28 +70,36 @@ orderby = "time"
 query = f"latitude={lat}&longitude={lng}&maxradiuskm={radius}&limit={limit}&orderby={orderby}"
 
 
+try:
+  response = requests.get(baseURL+query).json()
+  # print(response)
 
-response = requests.get(baseURL+query).json()
-# print(response)
+  timestamp= int(response["features"][0]["properties"]["time"])
+  # print(timestamp)
+  quaketime = datetime.datetime.fromtimestamp(timestamp//1000.0)
 
-timestamp= int(response["features"][0]["properties"]["time"])
-# print(timestamp)
-quaketime = datetime.datetime.fromtimestamp(timestamp//1000.0)
+  clock = datetime.datetime.now() - quaketime
 
-clock = datetime.datetime.now() - quaketime
+  #store as variables instead of print statements to prep for raspberry pi
+  earthquake = f"Last Earthquake: {(clock).days} Days "
+  # dayssince = f"{(clock).days} Days"
+  info = f'{response["features"][0]["properties"]["title"]}'.split(' of ')
+  quakedate = f'on {(quaketime).strftime("%Y-%m-%d %H:%M")}'
+  hours = (f'{int(round((clock).seconds/3600,0))} Hours')
 
-#store as variables instead of print statements to prep for raspberry pi
-earthquake = f"Last Earthquake: {(clock).days} Days "
-# dayssince = f"{(clock).days} Days"
-info = f'{response["features"][0]["properties"]["title"]}'.split(' of ')
-quakedate = f'on {(quaketime).strftime("%Y-%m-%d %H:%M")}'
-hours = (f'{int(round((clock).seconds/3600,0))} Hours')
+  print(earthquake)
+  print(info[0])
+  print(info[1])
+  print(quakedate)
+  print(hours)
 
-print(earthquake)
-print(info[0])
-print(info[1])
-print(quakedate)
-print(hours)
-
-printToDisplay(earthquake,info[0],info[1], quakedate, hours)
+  printToDisplay(earthquake,info[0],info[1], quakedate, hours)
+except:
+  none = "No Earthquakes in 30 days"
+  days = "in 30 Days"
+  later = "Keep on Shaking"
+  possible = "created by:"
+  creator = "April and Hans"
+  print(none)
+  printToDisplay(none,days,later,possible,creator)
 
